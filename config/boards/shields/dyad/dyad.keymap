@@ -118,8 +118,8 @@
         battery_macro: battery_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp L &kp COLON &kp SPACE &report <left_battery_percent> &kp PERCENT &kp COMMA &kp SPACE &kp R &kp COLON &kp SPACE &report <right_battery_percent &kp PERCENT>;
-            label = "PIN_MACRO";
+            bindings = <&kp L &kp COLON &kp SPACE &report left_battery_percent &kp PERCENT &kp COMMA &kp SPACE &kp R &kp COLON &kp SPACE &report right_battery_percent &kp PERCENT>;
+            label = "BATTERY_MACRO";
         };
     };
 
