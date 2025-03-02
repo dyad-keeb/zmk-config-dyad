@@ -4,6 +4,7 @@
     chosen {
         zmk,kscan = &kscan0;
         zmk,matrix_transform = &default_transform;
+        zmk,battery = &vbatt;
     };
 
     default_transform: keymap_transform_0 {
@@ -24,5 +25,10 @@
                                 RC(3,3) RC(3,4)                 RC(3,5) RC(3,6)
 
         >;
+    };
+
+    vbatt: vbatt {
+        compatible = "zmk,battery-nrf-vddh";
+        label = "BATTERY";
     };
 };
