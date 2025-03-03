@@ -117,12 +117,6 @@
             label = "PIN_MACRO";
         };
 
-        #battery_status: battery_status {
-            #compatible = "zmk,behavior-macro";
-            #bindings = <&macro_battery_macro>;
-            #label = "Battery Status";
-        #};
-
         Win_Cut: Windows_Cut {
           compatible = "zmk,behavior-macro";
           #binding-cells = <0>;
