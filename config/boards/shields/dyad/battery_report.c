@@ -23,4 +23,4 @@ static int send_battery_status() {
 }
 
 // Define the macro
-ZMK_MACRO(battery_macro, send_battery_status());
+ZMK_MACRO(macro_battery_macro, send_battery_status());
