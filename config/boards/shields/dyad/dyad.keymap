@@ -116,7 +116,7 @@
             label = "PIN_MACRO";
         };
 
-        battery_status {
+        battery_status: battery_status {
             compatible = "zmk,behavior-macro";
             bindings = <&macro_battery_macro>;
             label = "Battery Status";
