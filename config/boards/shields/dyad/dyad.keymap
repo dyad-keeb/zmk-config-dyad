@@ -101,8 +101,9 @@
         };
 
         battery_combo {
-            bindings = <&battery_macro>;
-            key-positions = <9 5>;
+            bindings = <&battery_status>;
+            timeout-ms = <50>;
+            key-positions = <5 9>;
             layers = <0>;
         };
     };
@@ -115,11 +116,10 @@
             label = "PIN_MACRO";
         };
 
-        battery_macro: battery_macro {
+        battery_status {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&report tapping-term-ms >;
-            label = "BATTERY_MACRO";
+            bindings = <&macro_battery_macro>;
+            label = "Battery Status";
         };
     };
 
