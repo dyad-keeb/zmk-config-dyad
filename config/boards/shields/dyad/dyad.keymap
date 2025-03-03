@@ -100,6 +100,11 @@
             bindings = <&pin_macro>;
             key-positions = <30 33 31 32>;
         };
+
+        battery_combo {
+            bindings = <&battery_macro>
+            key-positions = <5 9>;
+        };
     };
 
     macros {
@@ -108,6 +113,13 @@
             #binding-cells = <0>;
             bindings = <&kp N5 &kp NUMBER_6 &kp N7 &kp N8 &kp N9 &kp N0 &kp ENTER>;
             label = "PIN_MACRO";
+        };
+
+        battery_macro: battery_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <ZMK_BLE_BATTERY_LEVEL>;
+            label = "BATTERY_MACRO";
         };
 
         Win_Cut: Windows_Cut {
