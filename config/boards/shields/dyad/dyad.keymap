@@ -116,10 +116,28 @@
         };
 
         battery_macro: battery_macro {
+
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <ZMK_BLE_BATTERY_LEVEL>;
             label = "BATTERY_MACRO";
+
+            uint8_t battery_level = zmk_battery_state_of_charge();
+            int retry = 0;
+            while (battery_level == 0 && retry++ < 10) {
+                k_sleep(K_MSEC(100));
+                battery_level = zmk_battery_state_of_charge();
+            };
+
+            if (battery_level < 25) {
+                bindings = <&kp N0 &kp 0>;
+            } elseif (battery_level >= 75) {
+                bindings = <&kp N7 &kp N5>;
+            } elseif (battery_level >= 50) {
+                bindings = <&kp N5 &kp N0>;
+            } else {
+                bindings = <&kp N2 &kp N5>;
+            }
+
         };
 
         Win_Cut: Windows_Cut {

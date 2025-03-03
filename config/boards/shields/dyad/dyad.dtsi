@@ -4,18 +4,13 @@
     chosen {
         zmk,kscan = &kscan0;
         zmk,matrix_transform = &default_transform;
-        zmk,battery = &vbatt;
+        zmk,battery = &xiao_battery_voltage_divider;
     };
 
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <10>;
         rows = <4>;
-
-// | SW5  | SW4  | SW3  | SW2  | SW1  |                 | SW1  | SW2  | SW3  | SW4  | SW5  |
-// | SW10 | SW9  | SW8  | SW7  | SW6  |                 | SW6  | SW7  | SW8  | SW9  | SW10 |
-// | SW15 | SW14 | SW13 | SW12 | SW11 |                 | SW11 | SW12 | SW13 | SW14 | SW15 |
-//                      | SW17 | SW16 |                 | SW16 | SW17 |
 
         map = <
 
@@ -27,8 +22,13 @@
         >;
     };
 
-    vbatt: vbatt {
-        compatible = "zmk,battery-nrf-vddh";
-        label = "VBATT";
+    xiao_battery_voltage_divider: vbatt {
+      	status = "okay";
+      	compatible = "zmk,battery-voltage-divider";
+      	label = "XIAO voltage divider";
+      	io-channels = <&adc 7>;
+      	output-ohms = <470000>;
+      	full-ohms =  <1470000>;
+      	power-gpios = <&gpio0 14 (GPIO_ACTIVE_LOW)>;
     };
 };
