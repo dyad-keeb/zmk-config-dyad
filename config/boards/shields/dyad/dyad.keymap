@@ -100,13 +100,6 @@
             bindings = <&pin_macro>;
             key-positions = <30 33 31 32>;
         };
-
-        battery_combo {
-            bindings = <&battery_status>;
-            timeout-ms = <50>;
-            key-positions = <5 9>;
-            layers = <0>;
-        };
     };
 
     macros {
