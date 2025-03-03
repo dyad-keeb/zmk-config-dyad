@@ -102,7 +102,7 @@
         };
 
         battery_combo {
-            bindings = <&battery_macro>
+            bindings = <&battery_macro>;
             key-positions = <5 9>;
         };
     };
