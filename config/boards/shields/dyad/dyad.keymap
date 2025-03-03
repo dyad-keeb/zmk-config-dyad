@@ -7,7 +7,6 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/outputs.h>
-#include <behaviors/rgbled_widget.dtsi>
 
 &mt {
     tapping-term-ms = <120>;
