@@ -118,7 +118,7 @@
         battery_macro: battery_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&report <tapping-term-ms> >;
+            bindings = <&report tapping-term-ms >;
             label = "BATTERY_MACRO";
         };
     };
