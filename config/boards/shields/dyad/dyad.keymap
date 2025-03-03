@@ -7,7 +7,7 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/outputs.h>
-#include <battery_report.c>
+
 
 &mt {
     tapping-term-ms = <120>;
@@ -31,7 +31,7 @@
         };
 
         undo_combo {
-            bindings = <&kp LC(Z)>;
+            bindings = <&Win_Undo>;
             key-positions = <20 21>;
             layers = <1>;
         };
@@ -60,17 +60,17 @@
         };
 
         copy_combo {
-            bindings = <&kp LC(K_COPY)>;
+            bindings = <&Win_Copy>;
             key-positions = <22 23>;
         };
 
         paste_combo {
-            bindings = <&kp LC(K_PASTE)>;
+            bindings = <&Win_Paste>;
             key-positions = <23 24>;
         };
 
         cut_combo {
-            bindings = <&kp LC(K_CUT)>;
+            bindings = <&Win_Cut>;
             key-positions = <21 22>;
         };
 
@@ -117,10 +117,38 @@
             label = "PIN_MACRO";
         };
 
-        battery_status: battery_status {
-            compatible = "zmk,behavior-macro";
-            bindings = <&macro_battery_macro>;
-            label = "Battery Status";
+        #battery_status: battery_status {
+            #compatible = "zmk,behavior-macro";
+            #bindings = <&macro_battery_macro>;
+            #label = "Battery Status";
+        #};
+
+        Win_Cut: Windows_Cut {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp LC(X)>;
+          display-name = "Windows Cut";
+        };
+
+        Win_Copy: Windows_Copy {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp LC(C)>;
+          display-name = "Windows Copy";
+        };
+
+        Win_Paste: Windows_Paste {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp LC(V)>;
+          display-name = "Windows Paste";
+        };
+
+        Win_Undo: Windows_Undo {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&kp LC(Z)>;
+          display-name = "Windows Undo";
         };
     };
 
